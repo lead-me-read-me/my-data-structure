@@ -1,6 +1,6 @@
 package myhash;
 
-import mylist.*;
+import mylist.MyDoubleLinkedList;
 import java.util.Iterator;
 import java.lang.Iterable;
 
