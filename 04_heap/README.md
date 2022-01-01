@@ -1,27 +1,22 @@
 ## :one: Overview
 
-* 포인터를 사용하여 여러 개의 노드(Node)를 연결하는 자료구조
+* 완전이진트리 기반의 자료구조
 
-* 노드 (Node)
-  * 연결 리스트의 기본 구성 요소
-  * 구성요소<u>1</u> : 인접한 노드를 가리키는 ***next*** 라는 이름의 포인터
-  * 구성요소<u>2</u> : 해당 노드에 저장하는 ***data***
+* 최대값 혹은 최솟값을 찾아내는 연산 속도가 빠르다.
 
-* 연결 리스트를 잘 나타내는 예시 그림
+* 정렬 알고리즘에서도 사용된다.
 
-  ![linkedlist](https://user-images.githubusercontent.com/87659486/147822161-979a66c0-8877-4482-b058-b5def63555d7.png)
+* 힙 (Heap) 을 잘 나타내는 예시 그림
 
-* 연결 리스트의 변형
+  * 최대 힙 (Max Heap) - 부모 노드가 자식 노드보다 크다.
 
-  * 이중 연결 리스트 (Double Linked List)
+    ![maxheap](https://user-images.githubusercontent.com/87659486/147843422-43e791e7-db59-463c-9a56-d77371842141.png)
 
-    ![doublelinkedlist](https://user-images.githubusercontent.com/87659486/147822028-e391034e-5611-49c9-a944-b2ea9c98c8b0.png)
+  * 최소 힙 (Min Heap) - 부모 노드가 자식 노드보다 작다.
 
-  * 원형 연결 리스트 (Circular Linked List)
+    ![minheap](https://user-images.githubusercontent.com/87659486/147843443-c1416e83-fa42-4e46-8b15-518818583f64.png)
 
-    ![circularlinkedlist](https://user-images.githubusercontent.com/87659486/147822088-1668c085-a8d0-4f04-b924-b42f441a6a5b.png)
-    
-    
+  
 
 ## :two: Implementation
 
