@@ -1,3 +1,3 @@
 
-javac -d ./ MyTreeInterface.java MyTree.java
+javac -d ./ MyTreeInterface.java MyTree.java  
 
