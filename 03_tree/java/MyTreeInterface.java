@@ -1,4 +1,6 @@
-public interface TreeInterface<E> {
+package mytree;
+
+public interface MyTreeInterface<E> {
 
 	/*
 	 * Tree should be tracked by one of pre-order, in-order, post-order.
