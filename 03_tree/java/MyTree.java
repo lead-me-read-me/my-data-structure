@@ -150,7 +150,10 @@ public class MyTree<E> implements MyTreeInterface<E> {
 
 	public Node<E> rightRotate(Node<E> node) {
 		// TODO
-		return null;
+		Node<E> leftChild = node.left();
+		leftChild.setRight(node);
+		node.setLeft(null);
+		return leftChild;
 	}
 
 	public Node<E> rightLeftRotate(Node<E> node) {
@@ -164,8 +167,9 @@ public class MyTree<E> implements MyTreeInterface<E> {
 	}
 
 	public static void main(String[] args) {
-		MyTreeInterface<Integer> myTree = new MyTree<Integer>();
+		MyTree<Integer> myTree = new MyTree<Integer>();
 		
+		/*
 		myTree.add(8);
 		myTree.add(6);
 		myTree.add(10);
@@ -178,8 +182,18 @@ public class MyTree<E> implements MyTreeInterface<E> {
 		myTree.add(3);
 		myTree.add(2);
 		myTree.add(1);
-
+		*/
+		
+		myTree.add(6);
+		myTree.add(8);
+		myTree.add(10);
+		
 		myTree.travel();
+		System.out.println("----");
+		
+		myTree.setRoot(myTree.leftRotate(myTree.root()));
+		myTree.travel();
+
 		System.out.println(myTree.contains(3));
 		System.out.println(myTree.contains(15));
 	}
