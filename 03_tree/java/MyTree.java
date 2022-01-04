@@ -123,42 +123,111 @@ public class MyTree<E> implements MyTreeInterface<E> {
 	public boolean contains(E data) {
 		return this.contains(this.root(), data);
 	}
-	
 
-	private void remove(Node<E> node, E data) {
-		// TODO
-		return;
+	private Node<E> inorderSuccessorOf(Node<E> node) {
+		if (node == null || node.left() == null) {return null;}
+		Node<E> parentNode = node;
+		Node<E> currentNode = node.left();
+		while (currentNode != null) {
+			parentNode = currentNode;
+			currentNode = currentNode.right();
+		}
+		return parentNode;
+	}
+
+	private Node<E> inorderPredessorOf(Node<E> node) {
+		if (node == null || node.right() == null) {return null;}
+		Node<E> parentNode = node;
+		Node<E> currentNode = node.right();
+		while (currentNode != null) {
+			parentNode = currentNode;
+			currentNode = currentNode.left();
+		}
+		return parentNode;
+	}
+
+	private void swapNodeWithLeaf(Node<E> node, Node<E> leaf) {
+		
 	}
 
 	@Override
 	public void remove(E data) {
-		if (this.contains(data)) {
-			this.remove(this.root(), data);
+		if (!this.contains(data)) {return;}
+
+		Node<E> parentNode = null;
+		Node<E> currentNode = this.root();
+		
+		while (((Comparable) data).compareTo(currentNode.element()) != 0) {
+			parentNode = currentNode; 
+			if (((Comparable) data).compareTo(currentNode.element()) > 0) {
+				currentNode = currentNode.right();
+			}
+			else if (((Comparable) data).compareTo(currentNode.element()) < 0) {
+				currentNode = currentNode.left();
+			}
 		}
-		else {
-			return;
+
+		if (currentNode.left() == null && currentNode.right() == null) {
+			if (parentNode.left() == currentNode) {
+				parentNode.setLeft(null);
+			}
+			else if (parentNode.right() == currentNode) {
+				parentNode.setRight(null);
+			}
+		}
+		else if (currentNode.left() == null && currentNode.right() != null) {
+			if (parentNode.left() == currentNode) {
+				parentNode.setLeft(currentNode.right());
+			}
+			else if (parentNode.right() == currentNode) {
+				parentNode.setRight(currentNode.right());
+			}
+		}
+		else if (currentNode.left() != null && currentNode.right() == null) {
+			if (parentNode.left() == currentNode) {
+				parentNode.setLeft(currentNode.left());
+			}
+			else if (parentNode.right() == currentNode) {
+				parentNode.setRight(currentNode.left());
+			}
+		}
+		else if (currentNode.left() != null && currentNode.right() != null) {	
+			Node<E> inorderSuccessorOfCurrentNode = this.inorderSuccessorOf(currentNode);
+			Node<E> inorderPredessorOfCurrentNode = null;
+			if (inorderSuccessorOfCurrentNode != null) {
+				// swap inorderSuccessorOfCurrentNode with currentNode
+				// delete swapped-currentNode
+			}
+			else {
+				inorderPredessorOfCurrentNode = this.inorderPredessorOf(currentNode);
+			}
+
+			if (parentNode.left() == currentNode) {
+			}
+			else if (parentNode.right() == currentNode) {
+				currentNode.left().setRight(currentNode.right());
+				parentNode.setRight(currentNode.right());
+			}
 		}
 	}
 
 	public Node<E> leftRotate(Node<E> node) {
-		// TODO
 		Node<E> rightChild = node.right();
+		node.setRight(rightChild.left());
 		rightChild.setLeft(node);
-		node.setRight(null);
 		return rightChild;
 	}
 
 	public Node<E> rightRotate(Node<E> node) {
-		// TODO
 		Node<E> leftChild = node.left();
+		node.setLeft(leftChild.right());
 		leftChild.setRight(node);
-		node.setLeft(null);
 		return leftChild;
 	}
 
 	public Node<E> rightLeftRotate(Node<E> node) {
 		node.setRight(this.rightRotate(node.right()));
-		return this.rightRotate(node);
+		return this.leftRotate(node);
 	}
 
 	public Node<E> leftRightRotate(Node<E> node) {
