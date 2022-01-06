@@ -9,7 +9,7 @@
    * 사전 (Dictionary)
 3. [트리 (Tree)](./03_tree)
    * [힙 (Heap)](./04_heap)
-4. 정렬 (Sort)
+4. [정렬 (Sort)](./06_sort)
    * 버블 정렬 (Bubble Sort) 
    * 선택 정렬 (Selection Sort)
    * 삽입 정렬 (Insertion Sort)
