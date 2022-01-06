@@ -125,7 +125,7 @@
 
 * 매 스텝마다 큰 값이 오른쪽으로 밀려나오는 모습이 깊은 물에서 거품이 올라오는 모습과 유사
 
-  ![bubblesort](https://user-images.githubusercontent.com/87659486/148368462-ff54268b-e3de-410a-8f42-5417861e3197.png)
+  ![image](https://user-images.githubusercontent.com/87659486/148401731-4d012684-13d8-4509-a564-8b5bc52e57d2.png)
 
   > 참고: [권희정님의 버블 정렬 블로그글](https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html) 
 
@@ -147,10 +147,11 @@
 ### 2.5. 합병 정렬 (Merge Sort)
 
 * 요소가 하나만 남을 때까지 리스트를 나눠준 후, 나눴던 리스트를 대소 관계에 맞게 다시 합치는 정렬 알고리즘
+	![mergesort](https://user-images.githubusercontent.com/87659486/148373814-64b84bbc-71d6-49d2-8e7a-236a936adb41.png)
 
-​	![mergesort](https://user-images.githubusercontent.com/87659486/148373814-64b84bbc-71d6-49d2-8e7a-236a936adb41.png)
+	![image](https://user-images.githubusercontent.com/87659486/148401305-17e21530-72d3-4e3b-a0ef-52b9a68321fa.png)
 
-![mergesort2](https://user-images.githubusercontent.com/87659486/148382497-340da1e4-0d8a-43f7-8484-71725e23fd99.png)
+> 참고: [권희정님 합병 정렬 블로그글](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html) 
 
 * Pseudo code
 
@@ -178,7 +179,7 @@
     return merged_arr
   ```
 
-  > 참고: [DalySeo 님의 병함 정렬 블로그글](https://www.daleseo.com/sort-merge/) 
+  > 참고: [DalySeo 님의 합병 정렬 블로그글](https://www.daleseo.com/sort-merge/) 
   >
   > `arr[:mid]` 및 `arr[mid:]` 부분에서 배열 복제 발생으로 메모리 부족 현상이 발생할 수 있다.
 
@@ -219,7 +220,7 @@
     return sort(0, len(arr))
   ```
 
-  > 참고: [DalySeo 님의 병함 정렬 블로그글](https://www.daleseo.com/sort-merge/) 
+  > 참고: [DalySeo 님의 합병 정렬 블로그글](https://www.daleseo.com/sort-merge/) 
   >
   > Time complexity(Best, Avg, Worst): `O(NlogN)`, `O(NlogN)`, `O(NlogN)`
 
@@ -231,7 +232,7 @@
 
 * Pivot Point 를 이용하여 divide-and-conquer 방식으로 정렬하는 알고리즘
 
-  ![image](https://user-images.githubusercontent.com/87659486/148385429-9bd361ce-5de8-4c8e-a2e3-84d2e14fd65d.png)
+  ![image](https://user-images.githubusercontent.com/87659486/148401032-e1c5bb1e-dcf6-4be1-881b-16cc07a78ce1.png)
 
   > 참고: [권희정님 퀵 정렬 블로그글](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html) 
 
